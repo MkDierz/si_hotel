@@ -1,11 +1,6 @@
 <?php
 include 'include/config.php';
-$data = read($conn);
-$user_data = mysqli_fetch_array($data);
-echo "data";
-print_r($data);
-echo "userdata";
-print_r($user_data);
+$data = read();
 ?>
 
 <!DOCTYPE html>
