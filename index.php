@@ -11,37 +11,43 @@ $data = read('tbl_kamar');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
+    <link href="<?= $config['assets'] ?>css/custom.css" rel="stylesheet">
 </head>
 
 <body>
-    <table  style="border: 1px solid #999;padding: 0.5rem;">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Nama Kamar</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $i = 1;
-            while ($result = mysqli_fetch_array($data)) {
-            ?>
+    <div>
+        <a href="<?=$config['base_url'].'add_guest'?>">Tambah Tamu</a>
+    </div>
+    <div>
+        <table class="styled-table">
+            <thead>
                 <tr>
-                    <td><?php echo $i ?></td>
-                    <td><?php echo $result['kamar_nama'] ?></td>
-                    <td><?php if ($result['kamar_status'] == 1) {
-                        echo "Aviable";
-                    }else {
-                        echo "taken";
-                    } ?></td>
+                    <th>No.</th>
+                    <th>Nama Kamar</th>
+                    <th>Status</th>
                 </tr>
-            <?php
-                $i++;
-            }
-            ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php
+                $i = 1;
+                while ($result = mysqli_fetch_array($data)) {
+                ?>
+                    <tr>
+                        <td><?php echo $i ?></td>
+                        <td><?php echo $result['kamar_nama'] ?></td>
+                        <td><?php if ($result['kamar_status'] == 1) {
+                                echo "Kosong";
+                            } else {
+                                echo "Penuh";
+                            } ?></td>
+                    </tr>
+                <?php
+                    $i++;
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>
