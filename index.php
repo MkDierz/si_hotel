@@ -1,6 +1,6 @@
 <?php
 include 'include/config.php';
-$data = read();
+$data = read('tbl_kamar');
 ?>
 
 <!DOCTYPE html>
