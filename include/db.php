@@ -21,3 +21,12 @@ function read() {
     // return  mysqli_fetch_array($result);
     return  $result;
 }
+
+function write($table,$row,$data)
+{
+    $mysqli = OpenCon();
+    $result = mysqli_query($mysqli, "INSERT INTO .$table.(.$row.) VALUES($data)");
+    
+    // Show message when user added
+    echo "Data added successfully. <a href='index.php'>Home</a>";
+}
