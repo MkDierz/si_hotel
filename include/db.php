@@ -5,9 +5,9 @@ function OpenCon()
     $dbuser = "root";
     $dbpass = "";
     $db = "db_hotel";
-    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n" . $conn->error);
+    $mysqli = mysqli_connect($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n" . $mysqli->error);
 
-    return $conn;
+    return $mysqli;
 }
 
 function CloseCon($conn)
