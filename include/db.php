@@ -21,5 +21,3 @@ function read() {
     // return  mysqli_fetch_array($result);
     return  $result;
 }
-
-$conn = OpenCon();
