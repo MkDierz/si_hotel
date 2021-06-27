@@ -15,9 +15,11 @@ function CloseCon($conn)
     $conn->close();
 }
 
-function read($mysqli) {
+function read() {
+    $mysqli = OpenCon();
     $result = mysqli_query($mysqli, "SELECT * FROM tbl_kamar ORDER BY id DESC");
-    return $result;
+    // return  mysqli_fetch_array($result);
+    return  $result;
 }
 
 $conn = OpenCon();
